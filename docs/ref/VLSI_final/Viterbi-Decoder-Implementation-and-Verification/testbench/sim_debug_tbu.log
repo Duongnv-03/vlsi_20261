@@ -1,0 +1,78 @@
+-------------------------------------------------------------
+Starting Viterbi System Testbench
+Config: TBL=15, PM_WIDTH=8
+-------------------------------------------------------------
+[Time 405000] Sent Raw: 0x55 | Encoded Input: 0x3888
+[TBU] Received bit 1. total_count=0
+[Time 625000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[TBU] Received bit 1. total_count=1
+[TBU] Received bit 1. total_count=2
+[TBU] Received bit 1. total_count=3
+[TBU] Received bit 1. total_count=4
+[TBU] Received bit 1. total_count=5
+[TBU] Received bit 1. total_count=6
+[TBU] Received bit 1. total_count=7
+[Time 2365000] Sent Raw: 0xab | Encoded Input: 0xe221
+[TBU] Received bit 1. total_count=0
+[Time 2585000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[TBU] Received bit 1. total_count=1
+[TBU] Received bit 1. total_count=2
+[TBU] Received bit 1. total_count=3
+[TBU] Received bit 1. total_count=4
+[TBU] Received bit 1. total_count=5
+[TBU] Received bit 1. total_count=6
+[TBU] Received bit 1. total_count=7
+[Time 4325000] Sent Raw: 0x24 | Encoded Input: 0x0efb
+[TBU] Received bit 1. total_count=0
+[Time 4545000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[TBU] Received bit 1. total_count=1
+[TBU] Received bit 1. total_count=2
+[TBU] Received bit 1. total_count=3
+[TBU] Received bit 1. total_count=4
+[TBU] Received bit 1. total_count=5
+[TBU] Received bit 1. total_count=6
+[TBU] Received bit 1. total_count=7
+[Time 6285000] Sent Raw: 0x81 | Encoded Input: 0xec03
+[TBU] Received bit 1. total_count=0
+[Time 6505000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[TBU] Received bit 1. total_count=1
+[TBU] Received bit 1. total_count=2
+[TBU] Received bit 1. total_count=3
+[TBU] Received bit 1. total_count=4
+[TBU] Received bit 1. total_count=5
+[TBU] Received bit 1. total_count=6
+[TBU] Received bit 1. total_count=7
+[Time 8245000] Sent Raw: 0x09 | Encoded Input: 0x00ef
+[TBU] Received bit 1. total_count=0
+[Time 8465000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[TBU] Received bit 1. total_count=1
+[TBU] Received bit 1. total_count=2
+[TBU] Received bit 1. total_count=3
+[TBU] Received bit 1. total_count=4
+[TBU] Received bit 1. total_count=5
+[TBU] Received bit 1. total_count=6
+[TBU] Received bit 1. total_count=7
+[Time 10205000] Sent Raw: 0x63 | Encoded Input: 0x35cd
+[TBU] Received bit 1. total_count=0
+[Time 10425000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[TBU] Received bit 1. total_count=1
+[TBU] Received bit 1. total_count=2
+[TBU] Received bit 1. total_count=3
+[TBU] Received bit 1. total_count=4
+[TBU] Received bit 1. total_count=5
+[TBU] Received bit 1. total_count=6
+[TBU] Received bit 1. total_count=7
+[Time 12165000] Sent Raw: 0x0d | Encoded Input: 0x00d4
+[TBU] Received bit 1. total_count=0
+[Time 12385000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[TBU] Received bit 1. total_count=1
+[TBU] Received bit 1. total_count=2
+[TBU] Received bit 1. total_count=3
+[TBU] Received bit 1. total_count=4
+[TBU] Received bit 1. total_count=5
+[TBU] Received bit 1. total_count=6
+[TBU] Received bit 1. total_count=7
+-------------------------------------------------------------
+[1;32m [PASS] ALL TESTS PASSED! (0 vectors checked) [0m
+-------------------------------------------------------------
+tb_system_top.v:127: $finish called at 16065000 (1ps)

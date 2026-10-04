@@ -1,0 +1,5 @@
+# OpenLane-generated run data
+**/OpenLane/**/runs/
+
+# Preserve former nested Git metadata locally; the root repository owns the source tree
+**/.git_nested_backup/

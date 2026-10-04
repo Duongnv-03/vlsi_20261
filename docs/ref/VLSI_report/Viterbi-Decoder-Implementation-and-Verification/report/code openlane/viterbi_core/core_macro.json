@@ -1,0 +1,103 @@
+{
+    "DESIGN_NAME": "viterbi_core",
+    "VERILOG_FILES": [
+        "dir::../rtl/viterbi_core.v",
+        "dir::../bmu/runs/RUN_FINAL/final/vh/bmu.vh",
+        "dir::../acsu/runs/RUN_FINAL/final/vh/acsu.vh",
+        "dir::../pmu/runs/RUN_FINAL/final/vh/pmu.vh",
+        "dir::../tbu/runs/RUN_FINAL/final/vh/tbu.vh"
+    ],
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 12.5,
+    
+    "FP_SIZING": "absolute",
+    "DIE_AREA": [0, 0, 1000, 1000],
+    
+    "RT_MAX_LAYER": "met5",
+
+    "MACROS": {
+        "bmu": {
+            "instances": { "u_bmu": { "location": [50, 50], "orientation": "N" } },
+            "gds": ["dir::../bmu/runs/RUN_FINAL/final/gds/bmu.gds"],
+            "lef": ["dir::../bmu/runs/RUN_FINAL/final/lef/bmu.lef"],
+            "lib": {"*": "dir::../bmu/runs/RUN_FINAL/final/lib/nom_tt_025C_1v80/bmu__nom_tt_025C_1v80.lib"}
+        },
+        "acsu": {
+            "instances": { "u_acsu": { "location": [50, 700], "orientation": "N" } },
+            "gds": ["dir::../acsu/runs/RUN_FINAL/final/gds/acsu.gds"],
+            "lef": ["dir::../acsu/runs/RUN_FINAL/final/lef/acsu.lef"],
+            "lib": {"*": "dir::../acsu/runs/RUN_FINAL/final/lib/nom_tt_025C_1v80/acsu__nom_tt_025C_1v80.lib"}
+        },
+        "pmu": {
+            "instances": { "u_pmu": { "location": [700, 50], "orientation": "N" } },
+            "gds": ["dir::../pmu/runs/RUN_FINAL/final/gds/pmu.gds"],
+            "lef": ["dir::../pmu/runs/RUN_FINAL/final/lef/pmu.lef"],
+            "lib": {"*": "dir::../pmu/runs/RUN_FINAL/final/lib/nom_tt_025C_1v80/pmu__nom_tt_025C_1v80.lib"}
+        },
+        "tbu": {
+            "instances": { "u_tbu": { "location": [700, 700], "orientation": "N" } },
+            "gds": ["dir::../tbu/runs/RUN_FINAL/final/gds/tbu.gds"],
+            "lef": ["dir::../tbu/runs/RUN_FINAL/final/lef/tbu.lef"],
+            "lib": {"*": "dir::../tbu/runs/RUN_FINAL/final/lib/nom_tt_025C_1v80/tbu__nom_tt_025C_1v80.lib"}
+        }
+    },
+
+    "PDN_MACRO_CONNECTIONS": [
+        "u_bmu vccd1 vssd1 vccd1 vssd1",
+        "u_acsu vccd1 vssd1 vccd1 vssd1",
+        "u_pmu vccd1 vssd1 vccd1 vssd1",
+        "u_tbu vccd1 vssd1 vccd1 vssd1"
+    ],
+
+    "FP_PDN_MULTILAYER": true,
+    "FP_PDN_HORIZONTAL_LAYER": "met5",
+    "FP_PDN_VERTICAL_LAYER": "met4",
+    "FP_PDN_CORE_RING": false,
+
+    "PL_TARGET_DENSITY_PCT": 30,
+    "GRT_ALLOW_CONGESTION": true,
+    "GRT_OVERFLOW_ITERS": 100,
+    
+    "VDD_NETS": ["vccd1"],
+    "GND_NETS": ["vssd1"],
+    "VERILOG_POWER_DEFINE": "USE_POWER_PINS",
+
+    "//": "--- FIX ANTENNA ---",
+    "RUN_ANTENNA_REPAIR": true,
+    "RUN_HEURISTIC_DIODE_INSERTION": true,
+    "GRT_ANTENNA_ITERS": 100,
+    "GRT_ANTENNA_MARGIN": 20,
+    "HEURISTIC_ANTENNA_THRESHOLD": 45,
+    "DIODE_PADDING": 2,
+
+    "FP_PDN_VPITCH": 150,
+    "FP_PDN_HPITCH": 150,
+    "FP_PDN_VOFFSET": 60,
+    "FP_PDN_HOFFSET": 60,
+
+    "//": "--- FIX MAX SLEW & CAP ---",
+    "//": "1. Giảm Fanout để ép tool chèn buffer sớm hơn (4 thay vì 8)",
+    "MAX_FANOUT_CONSTRAINT": 10,
+
+    "//": "2. Tăng cường tối ưu hóa thiết kế",
+    "RUN_POST_GPL_DESIGN_REPAIR": true,
+    "RUN_POST_CTS_RESIZER_TIMING": true,
+    "DESIGN_REPAIR_BUFFER_OUTPUT_PORTS": true,
+    
+    "//": "3. QUAN TRỌNG: Tối ưu lại sau khi đi dây (Global Routing Resizer)",
+    "RUN_POST_GRT_RESIZER_TIMING": true,
+    
+    "//": "4. Ép công suất Buffer (Cho phép dùng nhiều buffer hơn)",
+    "PL_RESIZER_HOLD_MAX_BUFFER_PCT": 80,
+    
+    "//": "5. Nới lỏng giới hạn Slew một chút (nếu thư viện cho phép) để tool đỡ gồng",
+    "MAX_TRANSITION_CONSTRAINT": 1.5,
+    "MAX_CAPACITANCE_CONSTRAINT": 0.2,
+    "//": "--- FIX MAX CAP ---",
+    "//": "1. Giới hạn độ dài dây. Chip 1000um nên max dây chỉ cho 400um thôi",
+    "DESIGN_REPAIR_MAX_WIRE_LENGTH": 300,
+    
+    "//": "2. Đặt lề an toàn (Margin) 20% để tool sửa sớm hơn",
+    "DESIGN_REPAIR_MAX_CAP_PCT": 20,
+    "DESIGN_REPAIR_MAX_SLEW_PCT": 20
+}

@@ -1,0 +1,78 @@
+-------------------------------------------------------------
+Starting Viterbi System Testbench
+Config: TBL=48, PM_WIDTH=8
+-------------------------------------------------------------
+[Time 425000] Sent Raw: 0x55 | Encoded Input: 0x3888
+[Time 2345000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 4265000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 4345000: Expected 0x00, Got 0x00
+[Time 6185000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 8105000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 8635000: Expected 0x00, Got 0x00
+[Time 10025000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 11945000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;31m[CHECK FAIL][0m Time 12895000: Expected 0x00, Got 0xa0
+[Time 13905000] Sent Raw: 0xab | Encoded Input: 0xe221
+[Time 15825000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 17745000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 17825000: Expected 0x00, Got 0x00
+[Time 19665000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 21585000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 22115000: Expected 0x00, Got 0x00
+[Time 23505000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 25425000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;31m[CHECK FAIL][0m Time 26375000: Expected 0x55, Got 0x40
+[Time 27385000] Sent Raw: 0x24 | Encoded Input: 0x0efb
+[Time 29305000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 31225000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 31305000: Expected 0x00, Got 0x00
+[Time 33145000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 35065000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 35595000: Expected 0x00, Got 0x00
+[Time 36985000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 38905000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;31m[CHECK FAIL][0m Time 39855000: Expected 0x00, Got 0x20
+[Time 40865000] Sent Raw: 0x81 | Encoded Input: 0xec03
+[Time 42785000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 44705000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 44785000: Expected 0x00, Got 0x00
+[Time 46625000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 48545000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 49075000: Expected 0x00, Got 0x00
+[Time 50465000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 52385000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;31m[CHECK FAIL][0m Time 53335000: Expected 0xab, Got 0x00
+[Time 54345000] Sent Raw: 0x09 | Encoded Input: 0x00ef
+[Time 56265000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 58185000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 58265000: Expected 0x00, Got 0x00
+[Time 60105000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 62025000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 62555000: Expected 0x00, Got 0x00
+[Time 63945000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 65865000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;31m[CHECK FAIL][0m Time 66815000: Expected 0x00, Got 0x40
+[Time 67825000] Sent Raw: 0x63 | Encoded Input: 0x35cd
+[Time 69745000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 71665000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 71745000: Expected 0x00, Got 0x00
+[Time 73585000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 75505000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 76035000: Expected 0x00, Got 0x00
+[Time 77425000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 79345000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;31m[CHECK FAIL][0m Time 80295000: Expected 0x24, Got 0x00
+[Time 81305000] Sent Raw: 0x0d | Encoded Input: 0x00d4
+[Time 83225000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 85145000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 85225000: Expected 0x00, Got 0x00
+[Time 87065000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 88985000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;32m[CHECK PASS][0m Time 89515000: Expected 0x00, Got 0x00
+[Time 90905000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+[Time 92825000] Sent Tail: 0x00 | Encoded Tail: 0x0000
+    [1;31m[CHECK FAIL][0m Time 93775000: Expected 0x00, Got 0x60
+-------------------------------------------------------------
+[1;31m [FAIL] Found 7 ERRORS out of 21 tests. [0m
+-------------------------------------------------------------
+tb_system_top.v:127: $finish called at 96725000 (1ps)

@@ -1,0 +1,38 @@
+-------------------------------------------------------------
+Starting Viterbi System Testbench
+Config: TBL=15, PM_WIDTH=8
+-------------------------------------------------------------
+[Time 255000] Sent Raw: 0x55 | Encoded Input: 0x3888
+[PISO] Loaded 0x3888. Starting transmission.
+[PISO] Sending bits 00. Cnt= 8
+[Time 365000] Sent Raw: 0xab | Encoded Input: 0xe221
+[PISO] Loaded 0xe221. Starting transmission.
+[PISO] Sending bits 11. Cnt= 8
+[Time 475000] Sent Raw: 0x24 | Encoded Input: 0x0efb
+[PISO] Loaded 0x0efb. Starting transmission.
+[PISO] Sending bits 00. Cnt= 8
+[Time 585000] Sent Raw: 0x81 | Encoded Input: 0xec03
+[PISO] Loaded 0xec03. Starting transmission.
+[PISO] Sending bits 11. Cnt= 8
+[Time 695000] Sent Raw: 0x09 | Encoded Input: 0x00ef
+[PISO] Loaded 0x00ef. Starting transmission.
+[PISO] Sending bits 00. Cnt= 8
+[Time 805000] Sent Raw: 0x63 | Encoded Input: 0x35cd
+[PISO] Loaded 0x35cd. Starting transmission.
+[PISO] Sending bits 00. Cnt= 8
+[Time 915000] Sent Raw: 0x0d | Encoded Input: 0x00d4
+[PISO] Loaded 0x00d4. Starting transmission.
+[PISO] Sending bits 00. Cnt= 8
+[PISO] Sending bits 00. Cnt= 7
+[PISO] Sending bits 00. Cnt= 6
+[PISO] Sending bits 00. Cnt= 5
+[PISO] Sending bits 11. Cnt= 4
+[PISO] Sending bits 01. Cnt= 3
+[PISO] Sending bits 01. Cnt= 2
+[PISO] Sending bits 00. Cnt= 1
+    [1;31m[CHECK FAIL][0m Time 2515000: Expected 0x55, Got 0x30
+[PISO] Done.
+-------------------------------------------------------------
+[1;31m [FAIL] Found 1 ERRORS out of 1 tests. [0m
+-------------------------------------------------------------
+tb_system_top.v:127: $finish called at 2965000 (1ps)

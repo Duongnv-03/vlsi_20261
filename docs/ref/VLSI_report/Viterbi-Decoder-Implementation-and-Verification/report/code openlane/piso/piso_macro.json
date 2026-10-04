@@ -1,0 +1,36 @@
+{
+    "DESIGN_NAME": "piso",
+    "VERILOG_FILES": "dir::../rtl/piso.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 12.5,
+
+    "//": "--- CẤU HÌNH BẮT BUỘC CHO MACRO (QUAN TRỌNG) ---",
+    
+    "//": "1. Khai báo đây không phải là Core (Top-level) [1]",
+    "DESIGN_IS_CORE": false,
+
+    "//": "2. Tắt vòng ring nguồn bao quanh macro [2, 3]",
+    "FP_PDN_CORE_RING": false,
+
+    "//": "3. Giới hạn lớp kim loại cao nhất để đi dây (ví dụ met4 cho Sky130)",
+    "//": "Lớp met5 sẽ được dành cho Top-level đi dây nguồn ngang qua macro [2]",
+    "RT_MAX_LAYER": "met4",
+
+    "//": "4. Định nghĩa lưới nguồn (Power Grid) [4]",
+    "VDD_NETS": ["vccd1"],
+    "GND_NETS": ["vssd1"],
+    
+    "//": "Đảm bảo chân nguồn khớp với RTL (thường dùng `ifdef USE_POWER_PINS)",
+    "SYNTH_USE_PG_PINS_DEFINES": "USE_POWER_PINS",
+    "MAX_TRANSITION_CONSTRAINT": 1.5,
+    "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
+    "PNR_SDC_FILE": "dir::constraints.sdc",
+    "RUN_ANTENNA_REPAIR": true,
+    "RUN_HEURISTIC_DIODE_INSERTION": true,
+    "FP_CORE_UTIL": 40,
+    "PL_RESIZER_DESIGN_OPTIMIZATIONS": true,
+    "PL_RESIZER_TIMING_OPTIMIZATIONS": true,
+    "PL_RESIZER_HOLD_MAX_BUFFER_PERCENT": 80,
+    "MAX_FANOUT_CONSTRAINT": 6,
+    "CTS_MAX_FANOUT": 6
+}

@@ -1,0 +1,379 @@
+[START] --- STOP-AND-WAIT VERIFICATION ---
+-----------------------------------------------------------------------------------------
+|   TIME   | STATUS |  GOC (8-bit) |  INPUT (16-bit)  | OUTPUT (8-bit) | NOTE           |
+-----------------------------------------------------------------------------------------
+VCD info: dumpfile system_wave.vcd opened for output.
+[TIME 0][ACSU] Path Metrics: S0=  x, S1=  x, S2=  x, S3=  x
+            Decisions: S0->x, S1->x, S2->x, S3->x
+[TIME 0][BMU] Input Symbol: 00 | Branch Metrics Calculated...
+[TIME 125000][PISO_LOAD] Loading new byte: 0000
+[TIME 145000][TBU] BestState: 0 | OutBit: 0
+[TIME 145000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 145000][ACSU] Path Metrics: S0=  0, S1=129, S2=  2, S3=129
+            Decisions: S0->0, S1->0, S2->0, S3->0
+[TIME 155000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 155000][TBU] BestState: 0 | OutBit: 0
+[TIME 155000][ACSU] Path Metrics: S0=  0, S1=  3, S2=  2, S3=  3
+            Decisions: S0->0, S1->0, S2->0, S3->0
+[TIME 165000][TBU] BestState: 0 | OutBit: 0
+[TIME 165000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 175000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 175000][TBU] BestState: 0 | OutBit: 0
+[TIME 185000][TBU] BestState: 0 | OutBit: 0
+[TIME 185000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 195000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 195000][TBU] BestState: 0 | OutBit: 0
+[TIME 205000][TBU] BestState: 0 | OutBit: 0
+[TIME 205000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 215000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 215000][TBU] BestState: 0 | OutBit: 0
+[TIME 255000][PISO_LOAD] Loading new byte: e217
+[TIME 255000][BMU] Input Symbol: 11 | Branch Metrics Calculated...
+[TIME 265000][BMU] Input Symbol: 10 | Branch Metrics Calculated...
+[TIME 275000][PISO_ACTIVE] Reg: 1000100001011100 | Out: 10 | Busy: 1
+[TIME 275000][TBU] BestState: 0 | OutBit: 0
+[TIME 275000][ACSU] Path Metrics: S0=  1, S1=  2, S2=  1, S3=  3
+            Decisions: S0->0, S1->0, S2->0, S3->1
+[TIME 275000][BMU] Input Symbol: 00 | Branch Metrics Calculated...
+[TIME 285000][TBU] BestState: 0 | OutBit: 0
+[TIME 285000][PISO_ACTIVE] Reg: 0010000101110000 | Out: 00 | Busy: 1
+[TIME 285000][ACSU] Path Metrics: S0=  0, S1=  1, S2=  1, S3=  1
+            Decisions: S0->0, S1->0, S2->1, S3->0
+[TIME 285000][BMU] Input Symbol: 10 | Branch Metrics Calculated...
+[TIME 295000][PISO_ACTIVE] Reg: 1000010111000000 | Out: 10 | Busy: 1
+[TIME 295000][TBU] BestState: 0 | OutBit: 0
+[TIME 295000][ACSU] Path Metrics: S0=  1, S1=  1, S2=  1, S3=  1
+            Decisions: S0->0, S1->0, S2->0, S3->1
+[TIME 295000][BMU] Input Symbol: 00 | Branch Metrics Calculated...
+[TIME 305000][TBU] BestState: 0 | OutBit: 0
+[TIME 305000][PISO_ACTIVE] Reg: 0001011100000000 | Out: 00 | Busy: 1
+[TIME 305000][ACSU] Path Metrics: S0=  0, S1=  1, S2=  0, S3=  1
+            Decisions: S0->0, S1->0, S2->1, S3->0
+[TIME 305000][BMU] Input Symbol: 01 | Branch Metrics Calculated...
+[TIME 315000][PISO_ACTIVE] Reg: 0101110000000000 | Out: 01 | Busy: 1
+[TIME 315000][TBU] BestState: 3 | OutBit: 0
+[TIME 315000][ACSU] Path Metrics: S0=  1, S1=  1, S2=  1, S3=  0
+            Decisions: S0->0, S1->1, S2->0, S3->0
+[TIME 325000][TBU] BestState: 1 | OutBit: 0
+[TIME 325000][PISO_ACTIVE] Reg: 0111000000000000 | Out: 01 | Busy: 1
+[TIME 325000][ACSU] Path Metrics: S0=  2, S1=  0, S2=  2, S3=  1
+            Decisions: S0->0, S1->1, S2->0, S3->0
+[TIME 325000][BMU] Input Symbol: 11 | Branch Metrics Calculated...
+[TIME 335000][PISO_ACTIVE] Reg: 1100000000000000 | Out: 11 | Busy: 1
+[TIME 335000][TBU] BestState: 0 | OutBit: 0
+[TIME 335000][ACSU] Path Metrics: S0=  0, S1=  2, S2=  2, S3=  2
+            Decisions: S0->1, S1->1, S2->0, S3->1
+[TIME 335000][BMU] Input Symbol: 00 | Branch Metrics Calculated...
+[TIME 345000][TBU] BestState: 0 | OutBit: 0
+[TIME 345000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 345000][ACSU] Path Metrics: S0=  0, S1=  3, S2=  2, S3=  3
+            Decisions: S0->0, S1->0, S2->0, S3->0
+[TIME 365000][PISO_LOAD] Loading new byte: 0000
+[TIME 385000][TBU] BestState: 0 | OutBit: 0
+[TIME 385000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 395000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 395000][TBU] BestState: 0 | OutBit: 0
+[TIME 405000][TBU] BestState: 0 | OutBit: 0
+[TIME 405000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 415000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 415000][TBU] BestState: 0 | OutBit: 0
+[TIME 425000][TBU] BestState: 0 | OutBit: 0
+[TIME 425000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 435000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 435000][TBU] BestState: 0 | OutBit: 0
+[TIME 445000][TBU] BestState: 0 | OutBit: 0
+[TIME 445000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 455000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 455000][TBU] BestState: 0 | OutBit: 1
+[TIME 455000][SIPO] !!! BYTE COMPLETE !!! Data: 00 (Binary: 00000000)
+[TIME 475000][PISO_LOAD] Loading new byte: 0000
+[TIME 495000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 495000][TBU] BestState: 0 | OutBit: 0
+[TIME 505000][TBU] BestState: 0 | OutBit: 1
+[TIME 505000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 515000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 515000][TBU] BestState: 0 | OutBit: 0
+[TIME 525000][TBU] BestState: 0 | OutBit: 1
+[TIME 525000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 535000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 535000][TBU] BestState: 0 | OutBit: 1
+[TIME 545000][TBU] BestState: 0 | OutBit: 0
+[TIME 545000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 555000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 555000][TBU] BestState: 0 | OutBit: 0
+|   565000 |  PASS  |      35      |       e217       |       35       |                |
+[TIME 565000][SIPO] !!! BYTE COMPLETE !!! Data: 35 (Binary: 00110101)
+[TIME 565000][TBU] BestState: 0 | OutBit: 0
+[TIME 565000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 585000][PISO_LOAD] Loading new byte: 0000
+[TIME 605000][TBU] BestState: 0 | OutBit: 0
+[TIME 605000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 615000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 615000][TBU] BestState: 0 | OutBit: 0
+[TIME 625000][TBU] BestState: 0 | OutBit: 0
+[TIME 625000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 635000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 635000][TBU] BestState: 0 | OutBit: 0
+[TIME 645000][TBU] BestState: 0 | OutBit: 0
+[TIME 645000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 655000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 655000][TBU] BestState: 0 | OutBit: 0
+[TIME 665000][TBU] BestState: 0 | OutBit: 0
+[TIME 665000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 675000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 675000][TBU] BestState: 0 | OutBit: 0
+[TIME 675000][SIPO] !!! BYTE COMPLETE !!! Data: 00 (Binary: 00000000)
+[TIME 695000][PISO_LOAD] Loading new byte: 0000
+[TIME 715000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 715000][TBU] BestState: 0 | OutBit: 0
+[TIME 725000][TBU] BestState: 0 | OutBit: 0
+[TIME 725000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 735000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 735000][TBU] BestState: 0 | OutBit: 0
+[TIME 745000][TBU] BestState: 0 | OutBit: 0
+[TIME 745000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 755000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 755000][TBU] BestState: 0 | OutBit: 0
+[TIME 765000][TBU] BestState: 0 | OutBit: 0
+[TIME 765000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 775000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 775000][TBU] BestState: 0 | OutBit: 0
+[TIME 785000][SIPO] !!! BYTE COMPLETE !!! Data: 00 (Binary: 00000000)
+[TIME 785000][TBU] BestState: 0 | OutBit: 0
+[TIME 785000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 825000][PISO_LOAD] Loading new byte: 0efb
+[TIME 845000][TBU] BestState: 0 | OutBit: 0
+[TIME 845000][PISO_ACTIVE] Reg: 0011101111101100 | Out: 00 | Busy: 1
+[TIME 845000][BMU] Input Symbol: 11 | Branch Metrics Calculated...
+[TIME 855000][PISO_ACTIVE] Reg: 1110111110110000 | Out: 11 | Busy: 1
+[TIME 855000][TBU] BestState: 2 | OutBit: 0
+[TIME 855000][ACSU] Path Metrics: S0=  2, S1=  3, S2=  0, S3=  3
+            Decisions: S0->0, S1->0, S2->0, S3->0
+[TIME 855000][BMU] Input Symbol: 10 | Branch Metrics Calculated...
+[TIME 865000][TBU] BestState: 1 | OutBit: 0
+[TIME 865000][PISO_ACTIVE] Reg: 1011111011000000 | Out: 10 | Busy: 1
+[TIME 865000][ACSU] Path Metrics: S0=  3, S1=  0, S2=  3, S3=  2
+            Decisions: S0->0, S1->0, S2->0, S3->0
+[TIME 865000][BMU] Input Symbol: 11 | Branch Metrics Calculated...
+[TIME 875000][PISO_ACTIVE] Reg: 1111101100000000 | Out: 11 | Busy: 1
+[TIME 875000][TBU] BestState: 0 | OutBit: 0
+[TIME 875000][ACSU] Path Metrics: S0=  0, S1=  3, S2=  2, S3=  3
+            Decisions: S0->1, S1->1, S2->1, S3->1
+[TIME 885000][TBU] BestState: 2 | OutBit: 0
+[TIME 885000][PISO_ACTIVE] Reg: 1110110000000000 | Out: 11 | Busy: 1
+[TIME 885000][ACSU] Path Metrics: S0=  2, S1=  3, S2=  0, S3=  3
+            Decisions: S0->0, S1->0, S2->0, S3->0
+[TIME 885000][BMU] Input Symbol: 10 | Branch Metrics Calculated...
+[TIME 895000][PISO_ACTIVE] Reg: 1011000000000000 | Out: 10 | Busy: 1
+[TIME 895000][TBU] BestState: 1 | OutBit: 0
+[TIME 895000][ACSU] Path Metrics: S0=  3, S1=  0, S2=  3, S3=  2
+            Decisions: S0->0, S1->0, S2->0, S3->0
+[TIME 895000][BMU] Input Symbol: 11 | Branch Metrics Calculated...
+[TIME 905000][TBU] BestState: 0 | OutBit: 0
+[TIME 905000][PISO_ACTIVE] Reg: 1100000000000000 | Out: 11 | Busy: 1
+[TIME 905000][ACSU] Path Metrics: S0=  0, S1=  3, S2=  2, S3=  3
+            Decisions: S0->1, S1->1, S2->1, S3->1
+[TIME 905000][BMU] Input Symbol: 00 | Branch Metrics Calculated...
+[TIME 915000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 915000][TBU] BestState: 0 | OutBit: 0
+[TIME 915000][SIPO] !!! BYTE COMPLETE !!! Data: 00 (Binary: 00000000)
+[TIME 935000][PISO_LOAD] Loading new byte: 0000
+[TIME 955000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 955000][TBU] BestState: 0 | OutBit: 0
+[TIME 965000][TBU] BestState: 0 | OutBit: 0
+[TIME 965000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 975000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 975000][TBU] BestState: 0 | OutBit: 0
+[TIME 985000][TBU] BestState: 0 | OutBit: 0
+[TIME 985000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 995000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 995000][TBU] BestState: 0 | OutBit: 0
+[TIME 1005000][TBU] BestState: 0 | OutBit: 0
+[TIME 1005000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1015000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1015000][TBU] BestState: 0 | OutBit: 0
+[TIME 1025000][SIPO] !!! BYTE COMPLETE !!! Data: 00 (Binary: 00000000)
+[TIME 1025000][TBU] BestState: 0 | OutBit: 0
+[TIME 1025000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 1045000][PISO_LOAD] Loading new byte: 0000
+[TIME 1065000][TBU] BestState: 0 | OutBit: 0
+[TIME 1065000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1075000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1075000][TBU] BestState: 0 | OutBit: 1
+[TIME 1085000][TBU] BestState: 0 | OutBit: 0
+[TIME 1085000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1095000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1095000][TBU] BestState: 0 | OutBit: 0
+[TIME 1105000][TBU] BestState: 0 | OutBit: 1
+[TIME 1105000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1115000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1115000][TBU] BestState: 0 | OutBit: 0
+[TIME 1125000][TBU] BestState: 0 | OutBit: 0
+[TIME 1125000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1135000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 1135000][TBU] BestState: 0 | OutBit: 0
+[TIME 1135000][SIPO] !!! BYTE COMPLETE !!! Data: 24 (Binary: 00100100)
+|  1135000 |  PASS  |      24      |       0efb       |       24       |                |
+[TIME 1155000][PISO_LOAD] Loading new byte: 0000
+[TIME 1175000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1175000][TBU] BestState: 0 | OutBit: 0
+[TIME 1185000][TBU] BestState: 0 | OutBit: 0
+[TIME 1185000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1195000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1195000][TBU] BestState: 0 | OutBit: 0
+[TIME 1205000][TBU] BestState: 0 | OutBit: 0
+[TIME 1205000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1215000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1215000][TBU] BestState: 0 | OutBit: 0
+[TIME 1225000][TBU] BestState: 0 | OutBit: 0
+[TIME 1225000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1235000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1235000][TBU] BestState: 0 | OutBit: 0
+[TIME 1245000][SIPO] !!! BYTE COMPLETE !!! Data: 00 (Binary: 00000000)
+[TIME 1245000][TBU] BestState: 0 | OutBit: 0
+[TIME 1245000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 1265000][PISO_LOAD] Loading new byte: 0000
+[TIME 1285000][TBU] BestState: 0 | OutBit: 0
+[TIME 1285000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1295000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1295000][TBU] BestState: 0 | OutBit: 0
+[TIME 1305000][TBU] BestState: 0 | OutBit: 0
+[TIME 1305000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1315000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1315000][TBU] BestState: 0 | OutBit: 0
+[TIME 1325000][TBU] BestState: 0 | OutBit: 0
+[TIME 1325000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1335000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1335000][TBU] BestState: 0 | OutBit: 0
+[TIME 1345000][TBU] BestState: 0 | OutBit: 0
+[TIME 1345000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1355000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 1355000][TBU] BestState: 0 | OutBit: 0
+[TIME 1355000][SIPO] !!! BYTE COMPLETE !!! Data: 00 (Binary: 00000000)
+[TIME 1395000][PISO_LOAD] Loading new byte: ec03
+[TIME 1395000][BMU] Input Symbol: 11 | Branch Metrics Calculated...
+[TIME 1405000][BMU] Input Symbol: 10 | Branch Metrics Calculated...
+[TIME 1415000][PISO_ACTIVE] Reg: 1011000000001100 | Out: 10 | Busy: 1
+[TIME 1415000][TBU] BestState: 0 | OutBit: 0
+[TIME 1415000][ACSU] Path Metrics: S0=  1, S1=  2, S2=  1, S3=  3
+            Decisions: S0->0, S1->0, S2->0, S3->1
+[TIME 1415000][BMU] Input Symbol: 11 | Branch Metrics Calculated...
+[TIME 1425000][TBU] BestState: 2 | OutBit: 0
+[TIME 1425000][PISO_ACTIVE] Reg: 1100000000110000 | Out: 11 | Busy: 1
+[TIME 1425000][ACSU] Path Metrics: S0=  1, S1=  1, S2=  0, S3=  1
+            Decisions: S0->1, S1->0, S2->0, S3->0
+[TIME 1425000][BMU] Input Symbol: 00 | Branch Metrics Calculated...
+[TIME 1435000][PISO_ACTIVE] Reg: 0000000011000000 | Out: 00 | Busy: 1
+[TIME 1435000][TBU] BestState: 0 | OutBit: 0
+[TIME 1435000][ACSU] Path Metrics: S0=  1, S1=  1, S2=  1, S3=  1
+            Decisions: S0->0, S1->0, S2->1, S3->0
+[TIME 1445000][TBU] BestState: 0 | OutBit: 0
+[TIME 1445000][PISO_ACTIVE] Reg: 0000001100000000 | Out: 00 | Busy: 1
+[TIME 1445000][ACSU] Path Metrics: S0=  0, S1=  1, S2=  0, S3=  1
+            Decisions: S0->0, S1->0, S2->1, S3->0
+[TIME 1455000][PISO_ACTIVE] Reg: 0000110000000000 | Out: 00 | Busy: 1
+[TIME 1455000][TBU] BestState: 0 | OutBit: 0
+[TIME 1455000][ACSU] Path Metrics: S0=  0, S1=  1, S2=  1, S3=  1
+            Decisions: S0->0, S1->0, S2->1, S3->0
+[TIME 1465000][TBU] BestState: 0 | OutBit: 0
+[TIME 1465000][PISO_ACTIVE] Reg: 0011000000000000 | Out: 00 | Busy: 1
+[TIME 1465000][ACSU] Path Metrics: S0=  0, S1=  2, S2=  1, S3=  2
+            Decisions: S0->0, S1->0, S2->1, S3->0
+[TIME 1465000][BMU] Input Symbol: 11 | Branch Metrics Calculated...
+[TIME 1475000][PISO_ACTIVE] Reg: 1100000000000000 | Out: 11 | Busy: 1
+[TIME 1475000][TBU] BestState: 2 | OutBit: 0
+[TIME 1475000][ACSU] Path Metrics: S0=  2, S1=  2, S2=  0, S3=  2
+            Decisions: S0->0, S1->0, S2->0, S3->0
+[TIME 1475000][BMU] Input Symbol: 00 | Branch Metrics Calculated...
+[TIME 1485000][SIPO] !!! BYTE COMPLETE !!! Data: 00 (Binary: 00000000)
+[TIME 1485000][TBU] BestState: 1 | OutBit: 0
+[TIME 1485000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 1485000][ACSU] Path Metrics: S0=  2, S1=  1, S2=  2, S3=  1
+            Decisions: S0->0, S1->0, S2->1, S3->0
+[TIME 1505000][PISO_LOAD] Loading new byte: 0000
+[TIME 1525000][TBU] BestState: 2 | OutBit: 0
+[TIME 1525000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1525000][ACSU] Path Metrics: S0=  1, S1=  1, S2=  0, S3=  1
+            Decisions: S0->0, S1->1, S2->1, S3->1
+[TIME 1535000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1535000][TBU] BestState: 0 | OutBit: 0
+[TIME 1535000][ACSU] Path Metrics: S0=  1, S1=  1, S2=  1, S3=  1
+            Decisions: S0->0, S1->0, S2->1, S3->0
+[TIME 1545000][TBU] BestState: 0 | OutBit: 0
+[TIME 1545000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1545000][ACSU] Path Metrics: S0=  0, S1=  1, S2=  0, S3=  1
+            Decisions: S0->0, S1->0, S2->1, S3->0
+[TIME 1555000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1555000][TBU] BestState: 0 | OutBit: 0
+[TIME 1555000][ACSU] Path Metrics: S0=  0, S1=  1, S2=  1, S3=  1
+            Decisions: S0->0, S1->0, S2->1, S3->0
+[TIME 1565000][TBU] BestState: 0 | OutBit: 0
+[TIME 1565000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1565000][ACSU] Path Metrics: S0=  0, S1=  2, S2=  1, S3=  2
+            Decisions: S0->0, S1->0, S2->1, S3->0
+[TIME 1575000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1575000][TBU] BestState: 0 | OutBit: 0
+[TIME 1575000][ACSU] Path Metrics: S0=  0, S1=  2, S2=  2, S3=  2
+            Decisions: S0->0, S1->0, S2->0, S3->0
+[TIME 1585000][TBU] BestState: 0 | OutBit: 0
+[TIME 1585000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1585000][ACSU] Path Metrics: S0=  0, S1=  3, S2=  2, S3=  3
+            Decisions: S0->0, S1->0, S2->0, S3->0
+[TIME 1595000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 1595000][TBU] BestState: 0 | OutBit: 1
+[TIME 1595000][SIPO] !!! BYTE COMPLETE !!! Data: 00 (Binary: 00000000)
+[TIME 1615000][PISO_LOAD] Loading new byte: 0000
+[TIME 1635000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1635000][TBU] BestState: 0 | OutBit: 0
+[TIME 1645000][TBU] BestState: 0 | OutBit: 0
+[TIME 1645000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1655000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1655000][TBU] BestState: 0 | OutBit: 0
+[TIME 1665000][TBU] BestState: 0 | OutBit: 0
+[TIME 1665000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1675000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1675000][TBU] BestState: 0 | OutBit: 0
+[TIME 1685000][TBU] BestState: 0 | OutBit: 0
+[TIME 1685000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1695000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1695000][TBU] BestState: 0 | OutBit: 0
+[TIME 1705000][SIPO] !!! BYTE COMPLETE !!! Data: 01 (Binary: 00000001)
+[TIME 1705000][TBU] BestState: 0 | OutBit: 0
+[TIME 1705000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+|  1705000 |  FAIL  |      81      |       ec03       |       01       | Sai Output !!! |
+[TIME 1725000][PISO_LOAD] Loading new byte: 0000
+[TIME 1745000][TBU] BestState: 0 | OutBit: 0
+[TIME 1745000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1755000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1755000][TBU] BestState: 0 | OutBit: 0
+[TIME 1765000][TBU] BestState: 0 | OutBit: 0
+[TIME 1765000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1775000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1775000][TBU] BestState: 0 | OutBit: 0
+[TIME 1785000][TBU] BestState: 0 | OutBit: 0
+[TIME 1785000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1795000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1795000][TBU] BestState: 0 | OutBit: 0
+[TIME 1805000][TBU] BestState: 0 | OutBit: 0
+[TIME 1805000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1815000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 0
+[TIME 1815000][TBU] BestState: 0 | OutBit: 0
+[TIME 1815000][SIPO] !!! BYTE COMPLETE !!! Data: 00 (Binary: 00000000)
+[TIME 1835000][PISO_LOAD] Loading new byte: 0000
+[TIME 1855000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1855000][TBU] BestState: 0 | OutBit: 0
+[TIME 1865000][TBU] BestState: 0 | OutBit: 0
+[TIME 1865000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1875000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1875000][TBU] BestState: 0 | OutBit: 0
+[TIME 1885000][TBU] BestState: 0 | OutBit: 0
+[TIME 1885000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1895000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1
+[TIME 1895000][TBU] BestState: 0 | OutBit: 0
+-----------------------------------------------------------------------------------------
+ FINAL REPORT: Passed 2 / 3
+ RESULT: [[ FAILED - CO LOI XAY RA ]] 
+
+tb_system_top_auto.sv:105: $finish called at 1905000 (1ps)
+[TIME 1905000][TBU] BestState: 0 | OutBit: 0
+[TIME 1905000][PISO_ACTIVE] Reg: 0000000000000000 | Out: 00 | Busy: 1

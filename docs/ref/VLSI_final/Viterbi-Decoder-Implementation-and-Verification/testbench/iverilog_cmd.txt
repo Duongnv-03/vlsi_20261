@@ -1,0 +1,21 @@
+# design simulation
+iverilog -o sim.out sync_fifo.v && iverilog -o sim.out piso.v && iverilog -o sim.out bmu.v  && iverilog -o sim.out acsu.v && iverilog -o sim.out pmu.v && iverilog -o sim.out tbu.v  && iverilog -o sim.out sipo.v && iverilog -o sim.out viterbi_core.v && iverilog -o sim.out system_top.v
+
+iverilog -g2012 -o sim.out tb_pmu.sv
+iverilog -g2012 -o sim.out -I ../design/ tb_system_top.sv ../design/system_top.v
+iverilog -g2012 -o sim.out -I ../design/ tb_system_top_auto.sv ../design/system_top.v
+
+# làm 1 lần để tạo thư viện
+vlib work
+
+# Dịch file Testbench và chỉ đường dẫn include tới thư mục ../new
+vlog +incdir+../testbench tb_system_top_auto.sv ../design/system_top.v
+
+vsim -voptargs=+acc work.tb_system_top_auto
+add wave -position insertpoint sim:/tb_system_top_auto/*
+run -all
+
+#đi sâu vào DUT
+add wave -position insertpoint sim:/tb_system_top/dut/*
+
+#Openlane command

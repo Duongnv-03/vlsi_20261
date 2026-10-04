@@ -1,0 +1,118 @@
+{
+    "DESIGN_NAME": "system_top",
+    "VERILOG_FILES": [
+        "dir::../rtl/system_top.v",
+        "dir::../viterbi_core/runs/RUN_FINAL/final/vh/viterbi_core.vh"
+    ],
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 12.5,
+    "PNR_SDC_FILE": "dir::signoff.sdc",
+    "SIGNOFF_SDC_FILE": "dir::signoff.sdc",
+    "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
+
+    "//": "--- THIẾT LẬP FLOORPLAN ---",
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 1500 1500",
+    
+    "RT_MAX_LAYER": "met5",
+    
+    "//": "--- CẤU HÌNH LƯỚI ĐIỆN (PDN) ---",
+    "FP_PDN_MULTILAYER": true, 
+    "FP_PDN_CORE_RING": true,
+    "FP_PDN_CORE_RING_VWIDTH": 3,
+    "FP_PDN_CORE_RING_HWIDTH": 3,
+    "FP_CORE_MARGIN": 100,
+    "FP_PDN_CORE_RING_VOFFSET": 50,
+    "FP_PDN_CORE_RING_HOFFSET": 50,
+    "FP_PDN_VPITCH": 50,
+    "FP_PDN_HPITCH": 50,
+    "VDD_NETS": ["vccd1"],
+    "GND_NETS": ["vssd1"],
+    "STA_MULTICORNER": true,
+    "RUN_LINTER": false,
+    "QUIT_ON_LINTER_ERRORS": false,
+    
+    "//": "--- MACRO PLACEMENT (Giữ nguyên phần này) ---",
+    "MACROS": {
+        "viterbi_core": {
+            "instances": {
+                "u_viterbi_core": { "location": [50, 50], "orientation": "N" }
+            },
+            "gds": ["dir::../viterbi_core/runs/RUN_FINAL/final/gds/viterbi_core.gds"],
+            "lef": ["dir::../viterbi_core/runs/RUN_FINAL/final/lef/viterbi_core.lef"],
+            "lib": { "*": "dir::../viterbi_core/runs/RUN_FINAL/final/lib/nom_tt_025C_1v80/viterbi_core__nom_tt_025C_1v80.lib" },
+            "spef": {"*": "dir::../viterbi_core/runs/RUN_FINAL/final/spef/nom/viterbi_core.nom.spef"},
+            "nl": ["dir::../viterbi_core/runs/RUN_FINAL/final/nl/viterbi_core.nl.v"]
+        },
+        "sync_fifo": {
+            "instances": {
+                "u_input_fifo": { "location": [1200, 50], "orientation": "N" }
+            },
+            "gds": ["dir::../sync_fifo/runs/RUN_FINAL/final/gds/sync_fifo.gds"],
+            "lef": ["dir::../sync_fifo/runs/RUN_FINAL/final/lef/sync_fifo.lef"],
+            "lib": { "*": "dir::../sync_fifo/runs/RUN_FINAL/final/lib/nom_tt_025C_1v80/sync_fifo__nom_tt_025C_1v80.lib" },
+            "spef": {"*": "dir::../sync_fifo/runs/RUN_FINAL/final/spef/nom/sync_fifo.nom.spef"},
+            "nl": ["dir::../sync_fifo/runs/RUN_FINAL/final/nl/sync_fifo.nl.v"]
+        },
+        "sipo": {
+            "instances": {
+                "u_sipo": { "location": [1200, 400], "orientation": "N" }
+            },
+            "gds": ["dir::../sipo/runs/RUN_FINAL/final/gds/sipo.gds"],
+            "lef": ["dir::../sipo/runs/RUN_FINAL/final/lef/sipo.lef"],
+            "lib": { "*": "dir::../sipo/runs/RUN_FINAL/final/lib/nom_tt_025C_1v80/sipo__nom_tt_025C_1v80.lib" },
+            "spef": {"*": "dir::../sipo/runs/RUN_FINAL/final/spef/nom/sipo.nom.spef"},
+            "nl": ["dir::../sipo/runs/RUN_FINAL/final/nl/sipo.nl.v"]
+        },
+        "piso": {
+            "instances": {
+                "u_piso": { "location": [1200, 750], "orientation": "N" }
+            },
+            "gds": ["dir::../piso/runs/RUN_FINAL/final/gds/piso.gds"],
+            "lef": ["dir::../piso/runs/RUN_FINAL/final/lef/piso.lef"],
+            "lib": { "*": "dir::../piso/runs/RUN_FINAL/final/lib/nom_tt_025C_1v80/piso__nom_tt_025C_1v80.lib" },
+            "spef": {"*": "dir::../piso/runs/RUN_FINAL/final/spef/nom/piso.nom.spef"},
+            "nl": ["dir::../piso/runs/RUN_FINAL/final/nl/piso.nl.v"]
+        }
+    },
+
+    "PDN_MACRO_CONNECTIONS": [
+        "u_viterbi_core vccd1 vssd1 vccd1 vssd1",
+        "u_input_fifo   vccd1 vssd1 vccd1 vssd1",
+        "u_sipo         vccd1 vssd1 vccd1 vssd1",
+        "u_piso         vccd1 vssd1 vccd1 vssd1"
+    ],
+
+    "PL_TARGET_DENSITY_PCT": 35,
+    "FP_TAPCELL_DIST": 13,
+    "RUN_KLAYOUT_XOR": false,
+    "RUN_ANTENNA_REPAIR": true,
+    "DIODE_INSERTION_STRATEGY": 3,
+
+    "//": "--- FIX ANTENNA: Tăng cường chèn Diode ---",
+    "GRT_REPAIR_ANTENNAS": true,
+    "RUN_ANTENNA_REPAIR": true,
+    "DIODE_INSERTION_STRATEGY": 3,
+    "GRT_ANTENNA_ITERS": 20,
+    "DESIGN_REPAIR_MAX_WIRE_LENGTH": 400,
+    "RUN_POST_GRT_RESIZER_TIMING": true,
+    "//": "--- 3. FIX RSZ-0065 (DÂY QUÁ DÀI) ---",
+    "PL_RESIZER_MAX_WIRE_LENGTH": 400,
+    "//": "--- TỐI ƯU HÓA TIMING (HOLD tập trung) ---",
+    "RUN_POST_CTS_RESIZER_TIMING": true,
+    "PL_RESIZER_HOLD_REPAIR": true,
+    "PL_RESIZER_HOLD_MAX_BUFFER_PCT": 60,
+    "PL_RESIZER_HOLD_SLACK_MARGIN": 0.1,
+    "//": "--- ĐIỀU CHỈNH DÂY DẪN (FIX RSZ-0065) ---",
+    "PL_RESIZER_MAX_WIRE_LENGTH": 400,
+    "DESIGN_REPAIR_MAX_WIRE_LENGTH": 400,
+
+    "//": "--- CẤU HÌNH CTS ---",
+    "CTS_CLK_MAX_SKEW": 200,
+    "CTS_SINK_CLUSTERING_SIZE": 16,
+    "CTS_REPORT_TIMING": true,
+
+    "//": "--- CÁC THIẾT LẬP KHÁC ---",
+    "DPL_CELL_PADDING": 2,
+    "DETAILED_ROUTING_OPTIMIZATION_ITERATIONS": 10
+}

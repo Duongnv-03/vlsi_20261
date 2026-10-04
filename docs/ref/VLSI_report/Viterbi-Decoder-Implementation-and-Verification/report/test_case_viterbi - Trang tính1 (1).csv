@@ -1,0 +1,85 @@
+FIFO,,,,,
+ID,Tên Kịch Bản,Dữ liệu vào (wr_data_i),Hành động kích hoạt,Kết quả mong đợi (Output),Tiêu chí PASS
+TC_01,Reset & Initialization,N/A,"Kích hoạt rst_n xuống mức 0 trong 25ns, sau đó đưa lên mức 1.","empty_o = 1, full_o = 0. rd_data_o trả về giá trị mặc định (0).",Các cờ trạng thái khởi tạo đúng. 
+TC_02,Write until Full,Ngẫu nhiên ($random),"Bật wr_en_i, nạp dữ liệu liên tục 16 chu kỳ (DEPTH=16).",Cờ full_o chuyển từ 0 lên 1 khi nạp đủ 16 phần tử.,Không có lỗi ghi đè khi FIFO đã đầy.
+TC_03,Read until Empty,Dữ liệu đã ghi từ TC_02,"Bật rd_en_i, đọc dữ liệu liên tục 16 chu kỳ.",Cờ empty_o chuyển từ 0 lên 1 khi đọc hết phần tử cuối cùng.,Dữ liệu đọc ra khớp hoàn toàn với dữ liệu đã ghi (FIFO logic).
+TC_04,Data Integrity (5 Rounds),Ngẫu nhiên từng vòng,Thực hiện chu kỳ Ghi đầy - Đọc rỗng lặp lại 5 lần.,Dữ liệu mỗi vòng (Round) phải khớp chính xác với shadow_mem tương ứng.,error_count cuối mỗi vòng phải bằng 0.
+TC_05,Timing & Latency Check,Ngẫu nhiên,Thực hiện đọc dữ liệu và kiểm tra sau cạnh lên clock 2ns.,Dữ liệu ngõ ra rd_data_o phải ổn định sau khi cờ empty_o hạ xuống.,Trạng thái Got khớp với Exp tại thời điểm kiểm tra.
+,,,,,
+PISO ,,,,,
+ID,Tên Kịch Bản,Dữ liệu vào (fifo_data_i),Hành động kích hoạt,Kết quả mong đợi (Output),Tiêu chí PASS
+TC_01,Alternating Bits (0xAAAA),16'hAAAA (1010 1010 1010 1010),Kéo fifo_empty_i xuống 0. Đợi lệnh fifo_rd_en_o.,"Xuất ra 8 cặp bit lần lượt là: 10, 10, 10, 10, 10, 10, 10, 10.",Dữ liệu đúng từng cặp bit. valid_serial_o giữ mức 1 trong 8 chu kỳ.
+TC_02,Inverse Alternating (0x5555),16'h5555 (0101 0101 0101 0101),"Nạp dữ liệu vào bus, đợi module phản hồi lệnh đọc.","Xuất ra 8 cặp bit lần lượt là: 01, 01, 01, 01, 01, 01, 01, 01.",Dữ liệu khớp với MSB-to-LSB shift logic.
+TC_03,All Ones (0xFFFF),16'hFFFF (1111 1111 1111 1111),Kích hoạt chu kỳ đọc FIFO.,"Xuất ra 8 cặp bit lần lượt là: 11, 11, 11, 11, 11, 11, 11, 11.",Không có bit lỗi (giữ mức cao liên tục).
+TC_04,All Zeros (0x0000),16'h0000 (0000 0000 0000 0000),Kích hoạt chu kỳ đọc FIFO.,"Xuất ra 8 cặp bit lần lượt là: 00, 00, 00, 00, 00, 00, 00, 00.",valid_serial_o vẫn phải bật 1 dù dữ liệu là 0.
+TC_05,Random Stress Test,Ngẫu nhiên ($random),Lặp lại quá trình nạp và dịch bit 5 lần liên tục.,Xuất ra 8 cặp bit khớp chính xác với giá trị nạp vào ban đầu.,Tổng số lỗi (error_count) bằng 0. 
+,,,,,
+BMU,,,,,
+ID,Tên Kịch Bản,Dữ liệu vào (piso_data_i),Hành động kích hoạt,Kết quả mong đợi (Branch Metrics Output),Tiêu chí PASS
+TC_01,Ideal Case (00),2'b00,"Thay đổi ngõ vào, đợi mạch tổ hợp ổn định 10ns.","S0-S0: 0, S1-S2: 0, S0-S2: 2, S1-S0: 2. Các nhánh khác tính theo khoảng cách Hamming tương ứng.",Khoảng cách Hamming đúng từng nhánh.
+TC_02,Inverse Case (11),2'b11,"Thay đổi ngõ vào, đợi mạch tổ hợp ổn định 10ns.","S0-S0: 2, S1-S2: 2, S0-S2: 0, S1-S0: 0.",Kết quả khớp với Golden Model trong Testbench.
+TC_03,Single Bit Error (01),2'b01,"Thay đổi ngõ vào, đợi mạch tổ hợp ổn định 10ns.",Nhánh kỳ vọng mã 01 hoặc 10 sẽ có kết quả là 0 hoặc 1. Nhánh kỳ vọng mã 00 hoặc 11 sẽ có kết quả là 1.,Giá trị ngõ ra bằng tổng số bit khác biệt.
+TC_04,Single Bit Error (10),2'b10,"Thay đổi ngõ vào, đợi mạch tổ hợp ổn định 10ns.",Tương tự TC_03 nhưng đảo vị trí bit lỗi.,Không có lỗi logic trong hàm hamming_dist.
+TC_05,Random Stress,Ngẫu nhiên ($random % 4),Thực hiện thay đổi dữ liệu liên tục 5 lần.,Ngõ ra thay đổi tức thời theo dữ liệu vào.,Tổng số lỗi (error_count) cuối cùng bằng 0. 
+,,,,,
+,,,,,
+ACSU,,,,,
+ID,Tên Kịch Bản,Dữ liệu đầu vào (PM & BM),Hành động kích hoạt,Kết quả mong đợi (Output),Tiêu chí PASS
+TC_01,Min Path Case,"PM tăng dần theo j, BM cố định = 1.",Thực hiện tính toán 5 lần với các mức chi phí khác nhau.,Chọn nhánh có tổng (PM+BM) nhỏ nhất. Cập nhật PM mới và bit quyết định (DEC).,Dữ liệu DEC và PM khớp 100% với Golden Model. 
+TC_02,Switching Winner,"Thay đổi PM0 và PM1 để luân phiên làm ""người chiến thắng"".",Kích hoạt so sánh để đổi nhánh chọn từ 0 sang 1.,Bit quyết định (DEC) phải thay đổi tương ứng (0 sang 1 hoặc ngược lại).,DEC bit phản ánh đúng nhánh có chi phí thấp hơn.
+TC_03,Boundary Case,PM = 250 (Gần ngưỡng tràn 8-bit).,Kiểm tra phép cộng và so sánh ở giá trị biên.,Phép cộng PM + BM không gây lỗi logic so sánh dù giá trị lớn.,Module xử lý chính xác các giá trị tiệm cận 255.
+TC_04,Zero Case,Tất cả PM và BM đầu vào bằng 0.,Kích hoạt tính toán với dữ liệu rỗng.,"Tất cả PM ngõ ra = 0, DEC bit mặc định chọn nhánh ưu tiên (nhánh 0).",Không có lỗi Unknown (X) ở ngõ ra.
+TC_05,Random Stress,Sử dụng $random cho toàn bộ PM và BM.,Chạy 5 chu kỳ với dữ liệu ngẫu nhiên hoàn toàn.,"Ngõ ra phải khớp với phép tính: PMout​=min(PMa​+BMa​,PMb​+BMb​).",Tổng số lỗi (error_count) cuối cùng bằng 0.
+,,,,,
+,,,,,
+,,,,,
+PMU,,,,,
+ID,Tên Kịch Bản,Dữ liệu vào (pm_new_sX_i),Hành động kích hoạt,Kết quả mong đợi (Output),Tiêu chí PASS
+TC_01,Reset Check,N/A,Kéo rst_n xuống 0 trong 10ns.,"S0 = 0, S1-S3 = 255.",Các trạng thái khởi tạo đúng giá trị mặc định. 
+TC_02,Update Enable,Giá trị tăng dần theo j,"Bật valid_i = 1, cấp dữ liệu mới qua mỗi cạnh lên Clock.",pm_current_o cập nhật đúng giá trị từ pm_new_i sau 1 chu kỳ.,Dữ liệu ngõ ra khớp hoàn toàn với dữ liệu ngõ vào.
+TC_03,Keep Data,8'hFF (đối với S0),"Đưa valid_i về 0, thay đổi dữ liệu ngõ vào liên tục trong 5 chu kỳ.","Ngõ ra phải giữ nguyên giá trị cũ, không bị thay đổi bởi ngõ vào.",Module thực hiện đúng chức năng chốt dữ liệu (Latch).
+TC_04,Zero Stream,Tất cả bằng 0,"Bật valid_i = 1, cấp dữ liệu 0 cho toàn bộ các trạng thái.",Tất cả pm_current_o chuyển về giá trị 0.,Module phản hồi chính xác với dữ liệu xóa (Clear).
+TC_05,Random Stress,Ngẫu nhiên ($random),Cấp dữ liệu ngẫu nhiên liên tục trong 5 chu kỳ clock.,Ngõ ra cập nhật chính xác dữ liệu ngẫu nhiên sau mỗi nhịp clock.,Tổng số lỗi (error_count) bằng 0. 
+,,,,,
+TBU,,,,,
+ID,Tên Kịch Bản,"Dữ liệu đầu vào (dec_bits, PM)",Hành động kích hoạt,Kết quả mong đợi (Output),Tiêu chí PASS
+TC_01,Reset Check,N/A,Kích hoạt rst_n trong 15ns.,"valid_o = 0, decoded_bit_o = 0.",Các thanh ghi lịch sử (History) và bộ đếm trễ được xóa về 0.
+TC_02,Pipeline Filling,"dec_bits = 4'b0000, PM_S0 nhỏ nhất.",Bật valid_i và nạp liên tục dữ liệu trong 14 chu kỳ clock.,valid_o giữ ở mức 0 trong suốt quá trình nạp.,Module thực hiện đúng độ trễ (Latency) quy định bởi TBL=15.
+TC_03,Start Decoding,Giữ nguyên dữ liệu từ TC_02.,Chuyển sang chu kỳ clock thứ 15.,valid_o chuyển lên mức 1. Bắt đầu xuất bit giải mã.,Tín hiệu Valid ngõ ra xuất hiện đúng thời điểm pipeline đầy.
+TC_04,Data Traceback (Bit 1),"dec_bits[2] = 0, PM_S2 nhỏ nhất.",Nạp chuỗi bit '1' qua nhánh S2 trong 16 chu kỳ clock.,decoded_bit_o trả về giá trị 1.,Module thực hiện đúng phương pháp Register Exchange để truy vết lịch sử.
+TC_05,Valid_i Gating,Dữ liệu bất kỳ.,Tắt tín hiệu cho phép valid_i = 0.,valid_o ngay lập tức chuyển về 0.,Hệ thống tạm dừng giải mã khi đầu vào không hợp lệ.
+TC_06,Winner Switching,Thay đổi PM_S3 nhỏ nhất.,Cấp dữ liệu sao cho trạng thái S3 có chi phí thấp nhất.,Module chọn bit từ history_s3 để xuất ra ngõ ra.,Output khớp với logic chọn đường dẫn (Best Path) của bộ giải mã.
+,,,,,
+SIPO,,,,,
+ID,Tên Kịch Bản,Dữ liệu vào (data_serial_i),Hành động kích hoạt,Kết quả mong đợi (Output),Tiêu chí PASS
+TC_01,Reset Check,N/A,"Kéo rst_n xuống 0 trong 20ns, sau đó đưa lên 1.","byte_ready_o = 0, data_parallel_o = 0.",Module khởi tạo đúng trạng thái mặc định.
+TC_02,Normal Byte (0xA5),8'hA5 (1010 0101),Gửi lần lượt 8 bit ở cạnh xuống Clock (negedge).,data_parallel_o = 8'hA5. byte_ready_o bật lên 1.,Gom đủ 8 bit thành 1 byte chính xác.
+TC_03,All Ones (0xFF),8'hFF (1111 1111),Gửi liên tục 8 bit mức cao (1).,data_parallel_o = 8'hFF. byte_ready_o bật lên 1.,Khối dịch bit xử lý đúng chuỗi bit 1 liên tục.
+TC_04,All Zeros (0x00),8'h00 (0000 0000),Gửi liên tục 8 bit mức thấp (0).,data_parallel_o = 8'h00. byte_ready_o bật lên 1.,Khối dịch bit xử lý đúng chuỗi bit 0 liên tục.
+TC_05,Random Byte Stress,Ngẫu nhiên ($random),Thực hiện gửi 5 byte ngẫu nhiên liên tiếp.,Mỗi byte nhận được phải khớp hoàn toàn với byte đã gửi.,Tổng lỗi (error_count) bằng 0. 
+,,,,,
+,,,,,
+SYSTEM,,,,,
+ID,Tên Kịch Bản,Dữ liệu vào (16-bit),Hành động,Kỳ vọng (Output),Tiêu chí PASS
+SYS_01,Sanity Check (Zero),0x0000 (Encoded của 0x00),Gửi khi hệ thống rảnh (busy=0).,data_o = 0x00,"valid_o bật 1 xung, data_o đúng giá trị 0."
+SYS_02,Error Correction,0x0001 (Dữ liệu 0 bị lỗi 1 bit),Gửi khi rảnh.,data_o = 0x00,Hệ thống phải tự sửa bit lỗi và trả về 0x00.
+SYS_03,Busy Ignore,"Gói 1: 0x0000
+
+Gói 2: 0xFFFF (Nhiễu)",Gửi Gói 1. Đợi 5 clock (khi busy=1) thì cố tình gửi Gói 2.,Chỉ xuất ra 0x00. Không xuất 0xFF.,"Hệ thống phải lờ đi Gói 2, không bị treo, không xuất rác."
+SYS_04,Continuous Processing,"3 gói liên tiếp:
+
+0x0000, 0x0000, 0x0000",Gửi gói 1 -> Chờ valid_o -> Gửi gói 2 ngay lập tức -> ...,Xuất ra 3 lần 0x00.,"Chuyển trạng thái Busy/Idle mượt mà, không mất gói."
+SYS_05,System Reset,0x0000,Đang chạy giữa chừng thì kéo rst_n xuống 0.,busy_o về 0 ngay. valid_o không bao giờ lên.,"FSM về trạng thái IDLE, mọi output về 0."
+,,,,,
+,,,,,
+ID,Tên Kịch Bản,Dữ Liệu Vào,Hành Động (Action),Kỳ Vọng (Expected Output),Mục Đích
+SYS_01,Sanity Check,"0x00, 0xFF, 0xAA, 0x55",Gửi lần lượt từng byte khi busy=0.,Output chính xác 100%.,Kiểm tra logic giải mã cơ bản.
+SYS_02,Full Range Sweep,0x00 -> 0xFF,Gửi vòng lặp từ 0 đến 255.,Output chính xác từ 0 -> 255.,"Đảm bảo không có ""byte chết"" nào không giải mã được."
+SYS_03,Single Bit Error (Deterministic),Random Data,Lật (flip) lần lượt từng bit trong 16-bit mã hóa (Encoded packet) rồi gửi.,Hệ thống tự sửa và trả về Data đúng.,Đảm bảo Viterbi sửa được lỗi tại mọi vị trí bit.
+SYS_04,Double Bit Error,Random Data,Lật 2 bit ngẫu nhiên trong gói mã hóa.,Có thể sai hoặc đúng (tùy vị trí).,Xác định giới hạn sửa lỗi của hệ thống.
+SYS_05,Burst Error,Random Data,Lật 3-4 bit liên tiếp.,Output sai (Fail).,Xác nhận hành vi khi nhiễu quá mạnh (hệ thống không được treo).
+SYS_06,Busy Violation,"Gói 1: Valid
+
+Gói 2: Valid (Rác)","Gửi Gói 1. Khi busy_o=1 (đang xử lý Gói 1), cố tình gửi tiếp Gói 2.",Output Gói 1 đúng. Không xuất Gói 2. Không treo.,Kiểm tra cơ chế Flow Control (Bảo vệ luồng).
+SYS_07,Continuous Streaming ,Stream 100 bytes,"Gửi liên tục, dvalid_i bật ngay khi busy_o vừa hạ xuống 0 (Back-to-back).","Output ra đủ 100 bytes, không mất gói, không lệch pha.",Kiểm tra thông lượng (Throughput) tối đa.
+SYS_08,Hard Reset ,Đang gửi Data,Kéo rst_n xuống 0 giữa chừng quá trình giải mã.,"busy_o về 0, valid_o tắt. Trạng thái FSM về IDLE.",Kiểm tra khả năng phục hồi sau Reset.

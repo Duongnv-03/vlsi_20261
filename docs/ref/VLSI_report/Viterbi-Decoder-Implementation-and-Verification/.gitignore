@@ -1,0 +1,60 @@
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Ubuntu / Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Logs and Temporary Files
+*.log
+*.out
+*.tmp
+*.bak
+*.swp
+
+# LaTeX Build Artifacts
+*.aux
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.xdv
+*.nav
+*.snm
+*.vrb
+# Uncomment if you want to ignore generated PDFs
+# *.pdf
+
+# Verilog / Simulation Artifacts
+*.vcd
+*.wlf
+*.fsdb
+obj_dir/
+sim_main
+*.vvp
+work/
+transcript
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
